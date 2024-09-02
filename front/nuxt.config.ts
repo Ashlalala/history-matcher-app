@@ -4,9 +4,12 @@ export default defineNuxtConfig({
       apiBaseURL: process.env.API_BASE_URL || 'http://localhost:8000/api',
     },
   },
+
   modules: [
     "@nuxtjs/tailwindcss",
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
   ],
+
+  compatibilityDate: '2024-08-31',
 })

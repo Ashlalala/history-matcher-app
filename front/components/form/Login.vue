@@ -25,9 +25,6 @@
 import { useUserStore } from '~/store/userStore';
 const userStore = useUserStore();
 
-
-const router = useRouter();
-
 const form = ref({
   email: '',
   password: '',
@@ -41,10 +38,8 @@ const login = async () => {
     
     userStore.setToken(data.token);
     userStore.setUser(data.user);
-
-    await router.push('/');
-    // await nextTick(); //this one seems to not be neccessary to include
-    reloadNuxtApp();
+    
+    reloadNuxtApp({path: '/', ttl: 1000});
   } catch (error) {
     console.error('Login failed', error);
   }

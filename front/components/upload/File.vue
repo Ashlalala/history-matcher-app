@@ -5,7 +5,7 @@
     <button v-if="file" type="submit" >postFile</button>
   </form>
   <div class="bg-gray-500 m-20 p-4 rounded-md">
-    {{ form.videos?.splice(0,100) }}
+    {{ form.videos?.splice(0,1000) }}
   </div>
 </template>
 

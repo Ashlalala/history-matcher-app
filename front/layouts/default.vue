@@ -21,8 +21,6 @@
 
 <script setup>
 import { useUserStore } from '~/store/userStore';
-
-
 const userStore = useUserStore();
 
 const user = userStore.user;
@@ -30,12 +28,6 @@ const user = userStore.user;
 function logout(){
   userStore.clearToken();
   userStore.clearUser();
-  reloadNuxtApp(); // ?change to something better?
-
+  reloadNuxtApp({path:'/', ttl: 1000}); // ?change to something better?
 }
-
-console.log(userStore);
-console.log(user);
-
-
 </script>
